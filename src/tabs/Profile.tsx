@@ -1,14 +1,20 @@
 import { View, Text, StyleSheet, TouchableOpacity, Image } from 'react-native'
 import React from 'react'
+import { useNavigation } from '@react-navigation/native';
 
 const Profile = () => {
     const profile = {
         name: 'Ismail Aabrar',
-        email: 'ia@example.com',
+        email: 'ia@gmail.com',
         password: '********',
         bloodGroup: 'B+',
        
       };
+      const navigation = useNavigation();
+    const Logout =  () => {
+               navigation.navigate('SelectLogin')
+
+    };
     
       const handleEditProfile = () => {
         console.log('Edit profile button pressed');
@@ -39,6 +45,10 @@ const Profile = () => {
       <TouchableOpacity style={styles.editButton} onPress={handleEditProfile}>
         <Text style={styles.editButtonText}>Edit Profile</Text>
       </TouchableOpacity>
+      <TouchableOpacity style={styles.editButton} onPress={() => Logout()}>
+        <Text style={styles.editButtonText}>Logout</Text>
+      </TouchableOpacity>
+      
     </View>
     </View>
     )
@@ -68,7 +78,7 @@ const styles = StyleSheet.create({
         elevation: 4,
         marginTop: 10,
         borderRadius: 10,
-        height: 500,
+        height: 570,
         marginBottom: 10,
         padding: 20,
         shadowColor: '#000',
@@ -106,6 +116,7 @@ const styles = StyleSheet.create({
         textAlign: 'center',
         marginTop: 15
       },
+      
 });
 
 export default Profile

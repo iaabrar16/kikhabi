@@ -4,10 +4,11 @@ import Items from '../tabs/Items';
 import Add from '../tabs/Add';
 import Profile from '../tabs/Profile';
 import Orders from '../tabs/Orders';
-import Logout from '../tabs/Logout';
+import Message from '../tabs/Message';
 
 const Dashboard = () => {
     const [selectedTab, setSelectedTab] = useState(0);
+    
     return (
         <View style={styles.container}>
             {selectedTab == 0 ? (
@@ -19,7 +20,7 @@ const Dashboard = () => {
             ) : selectedTab == 3 ? (
                 <Profile />
             ) : (
-                <Logout />
+                <Message />
             )}
             <View style={styles.bottomView}>
                 <TouchableOpacity
@@ -84,7 +85,7 @@ const Dashboard = () => {
                         setSelectedTab(4);
                     }}>
                     <Image
-                        source={require('../images/power-off.png')}
+                        source={require('../images/chat.png')}
                         style={[
                             styles.bottomTabImg,
                             { tintColor: selectedTab == 4 ? 'red' : 'black' },

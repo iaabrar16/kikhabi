@@ -42,8 +42,7 @@ const UserLogin = () => {
 
             if (response.ok) {
                 const result = await response.json();
-                // Assuming the server response includes user details like userId, mobile, name
-                // goToNextScreen(result.userId, result.mobile, result.name);
+                
                 setAuthEmail(email)
                 goToNextScreen(email)
 
@@ -63,13 +62,7 @@ const UserLogin = () => {
         navigation.navigate('Home');
     };
 
-    // const goToNextScreen = async (userId, mobile, name) => {
-    //     await AsyncStorage.setItem('EMAIL', email);
-    //     await AsyncStorage.setItem('USERID', userId);
-    //     await AsyncStorage.setItem('MOBILE', mobile);
-    //     await AsyncStorage.setItem('NAME', name);
-    //     navigation.navigate('Home');
-    // };
+    
     return (
         <View style={styles.container}>
 
